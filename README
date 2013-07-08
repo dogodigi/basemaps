@@ -27,3 +27,50 @@ then run `make STYLE=bingosm2pgsql` to create the osm-bingosm2pgsql.map
 documentation as to how to edit generate_style.py to adapt the rendering has yet to be done, but is simple.
 check https://github.com/mapserver/mapserver/wiki/RenderingOsmDataOnUbuntuv2 for a preliminary tutorial.
 
+## Install basemaps mapfile generator
+
+### Using the modified OpenGeoGroep release from Github:
+```bash
+  git clone https://github.com/opengeogroep/basemaps.git
+  cd basemaps
+
+... Update basemaps' osmbase.map and Makefile as follows:
+  vi osm-base.map
+-------------------8<------------------------
+  WEB
+...
+    IMAGEPATH "/tmp/ms_tmp/"
+    IMAGEURL "/ms_tmp/"
+ END
+...
+-------------------->8-----------------------
+
+  vi Makefile
+-------------------8<------------------------
+OSM_SRID=3857
+OSM_UNITS=meters
+OSM_EXTENT=-20000000 -20000000 20000000 20000000
+...
+STYLE=google
+-------------------->8-----------------------
+```
+ * With trunk, the '''STYLE''' parameter possible values are the keys of the style_aliases hash, which can be found in the generate_style.py file.  For example: google
+ * Create MapServer temp dirs (required by mapserv CGI for testing with openlayers template)
+
+```bash
+  mkdir /tmp/ms_tmp
+  chmod 777 /tmp/ms_tmp
+```
+ * Initialize the data and generated folder. You only need to do this once. It may take a while to download everything.
+
+```bash
+  cd data
+  make
+```
+
+ * Execute the basemaps makefile to generate the mapfile.
+
+```bash
+  cd ..
+  make
+```
