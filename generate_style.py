@@ -1309,37 +1309,44 @@ parser.add_option("-s", "--style",
 
 (options, args) = parser.parse_args()
 
-items = vars.items()
-for namedstyle in style_aliases[options.style].split(','):
-   items = items + styles[namedstyle].items()
+items = dict(vars.items())
 
-style = dict(items)
+for namedstyle in style_aliases[options.style].split(','):
+   items.update(styles[namedstyle].items())
+   
+style = items
 
 if options.full:
-   print "###### level 0 ######"
-   for k,v in style.iteritems():
+   print ("###### level 0 ######")
+   for k,v in style.items():
       if type(v) is dict:
-         print "#define _%s0 %s"%(k,v[0])
+         msg = "#define _%s0 %s"%(k,v[0])
+         print (msg)
       else:
-         print "#define _%s0 %s"%(k,v)
-
+         msg = "#define _%s0 %s"%(k,v)
+         print (msg)
 
    for i in range(1,19):
-      print
-      print "###### level %d ######"%(i)
-      for k,v in style.iteritems():
+      print ()
+      msg = "###### level %d ######"%(i)
+      print(msg)
+      for k,v in style.items():
          if type(v) is dict:
-            if not v.has_key(i):
-               print "#define _%s%d _%s%d"%(k,i,k,i-1)
+            if not i in v:
+               msg = "#define _%s%d _%s%d"%(k,i,k,i-1)
+               print (msg)
             else:
-               print "#define _%s%d %s"%(k,i,v[i])
+               msg = "#define _%s%d %s"%(k,i,v[i])
+               print (msg)
          else:
-            print "#define _%s%d %s"%(k,i,v)
-
+            msg ="#define _%s%d %s"%(k,i,v)
+            print (msg)
 if options.level != -1:
    level = options.level
-   for k,v in style.iteritems():
-      print "#undef _%s"%(k)
+   for k,v in style.items():
+      msg = "#undef _%s"%(k)
+      print (msg)
 
-   for k,v in style.iteritems():
-      print "#define _%s _%s%s"%(k,k,level)
+   for k,v in style.items():
+      msg = "#define _%s _%s%s"%(k,k,level)
+      print (msg)
