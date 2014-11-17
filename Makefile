@@ -10,14 +10,15 @@ CPP=gcc -E -x c
 #if the preprocessor fails for some reason, try replacing this with "cpp" on linux, or "cpp-4.2" on darwin (not available starting with mountain lion)
 
 OSM_MAP_TITLE=openstreetmap
-OSM_PREFIX=import.osm_
+OSM_PREFIX=planet_osm_
 OSM_NAME_COLUMN=name
 OSM_SRID=3857
 OSM_GRID_SRID=28992
 OSM_UNITS=meters
 #OSM_EXTENT=12000 304000 280000 620000 #28992
-OSM_EXTENT=90000 6340000 900000 7200000 #3857
-OSM_DB_CONNECTION=host=localhost dbname=imposm user=openstreetmap password=openstreetmap port=5433
+#3857
+OSM_EXTENT=-20026376.39 -20048966.10 20026376.39 20048966.10
+OSM_DB_CONNECTION=host=localhost dbname=central-south-america user=openstreetmap password=openstreetmap port=5433
 OSM_WMS_SRS=EPSG:4326 EPSG:900913 EPSG:28992 EPSG:3857
 
 DEBUG=1
@@ -39,7 +40,7 @@ includes=land.map landusage.map borders.map highways.map places.map \
 mapfile=osm-$(STYLE).map
 here=`pwd`
 
-all:$(mapfile) boundaries.sql
+all:$(mapfile) boundaries.sql clean
 
 # We only need to generate once
 generated/$(STYLE)style.msinc: pyMapFile.py

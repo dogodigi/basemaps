@@ -1,0 +1,352 @@
+SYMBOLSET
+# $Id: symbols.sym,v 2.0 2014/11/17 19:06:35 dogodigi $ # 
+
+# poi symbols from http://www.mapplus.ch/neapoljs-dojo/v2.5.2/wmcm/help/MapServer/sym_truetype.htm
+  SYMBOL
+    NAME "restaurant"
+    TYPE TRUETYPE
+    FONT "poi"
+    CHARACTER "t"
+    ANTIALIAS TRUE
+  END
+  SYMBOL
+    NAME "hospital"
+    TYPE TRUETYPE
+    FONT "poi"
+    CHARACTER "1"
+    ANTIALIAS TRUE
+  END
+  SYMBOL
+    NAME "parking"
+    TYPE TRUETYPE
+    FONT "poi"
+    CHARACTER ":"
+    ANTIALIAS TRUE
+  END
+  SYMBOL
+    NAME "postbox"
+    TYPE TRUETYPE
+    FONT "poi"
+    CHARACTER "K"
+    ANTIALIAS TRUE
+  END
+  SYMBOL
+    NAME "telephone"
+    TYPE TRUETYPE
+    FONT "poi"
+    CHARACTER "="
+    ANTIALIAS TRUE
+  END
+  SYMBOL
+    NAME "fuel"
+    TYPE TRUETYPE
+    FONT "poi"
+    CHARACTER "5"
+    ANTIALIAS TRUE
+  END
+  SYMBOL
+    NAME "fastfood"
+    TYPE TRUETYPE
+    FONT "poi"
+    CHARACTER "*"
+    ANTIALIAS TRUE
+  END
+  SYMBOL
+    NAME "bank"
+    TYPE TRUETYPE
+    FONT "poi"
+    CHARACTER "H"
+    ANTIALIAS TRUE
+  END 
+  SYMBOL
+    NAME "pharmacy"
+    TYPE TRUETYPE
+    FONT "poi"
+    CHARACTER "b"
+    ANTIALIAS TRUE
+  END
+  SYMBOL
+    NAME "cafe"
+    TYPE TRUETYPE
+    FONT "poi"
+    CHARACTER "("
+    ANTIALIAS TRUE
+  END
+  SYMBOL
+    NAME "toilets"
+    TYPE TRUETYPE
+    FONT "poi"
+    CHARACTER "0"
+    ANTIALIAS TRUE
+  END
+  SYMBOL
+    NAME "information"
+    TYPE TRUETYPE
+    FONT "poi"
+    CHARACTER "2"
+    ANTIALIAS TRUE
+  END
+  SYMBOL
+    NAME "viewpoint"
+    TYPE TRUETYPE
+    FONT "poi"
+    CHARACTER "O"
+    ANTIALIAS TRUE
+  END
+  SYMBOL
+    NAME "hotel"
+    TYPE TRUETYPE
+    FONT "poi"
+    CHARACTER "6"
+    ANTIALIAS TRUE
+  END
+  SYMBOL
+    NAME "museum"
+    TYPE TRUETYPE
+    FONT "poi"
+    CHARACTER "3"
+    ANTIALIAS TRUE
+  END
+  SYMBOL
+    NAME "campsite"
+    TYPE TRUETYPE
+    FONT "poi"
+    CHARACTER "u"
+    ANTIALIAS TRUE
+  END
+  SYMBOL
+    NAME "windrad"
+    TYPE TRUETYPE
+    FONT "carto"
+    CHARACTER "g"
+    ANTIALIAS TRUE
+  END
+  SYMBOL
+    NAME "coniferous"
+    TYPE TRUETYPE
+    FONT "carto"
+    CHARACTER "!"
+  END
+  SYMBOL
+    NAME "deciduous"
+    TYPE TRUETYPE
+    FONT "carto"
+    CHARACTER '"'
+  END
+  SYMBOL
+    NAME "mixed"
+    TYPE TRUETYPE
+    FONT "carto"
+    CHARACTER '#'
+  END
+  SYMBOL
+    NAME "barrier"
+    TYPE TRUETYPE
+    FONT "signs"
+    CHARACTER '|'
+  END
+
+# vector symbols
+  SYMBOL
+    NAME "citycircle"
+    TYPE ellipse
+    POINTS 1 1 END
+    FILLED true
+  END
+  SYMBOL
+    NAME "square"
+    TYPE vector
+    POINTS
+      0 0
+      0 1
+      1 1
+      1 0
+      0 0
+    END
+    FILLED true
+  END
+  SYMBOL
+    NAME "circle"
+    TYPE ellipse
+    FILLED true
+    POINTS
+      1 1
+    END
+  END
+  SYMBOL 
+    NAME 'tent'  
+    TYPE VECTOR  
+    FILLED TRUE  
+    POINTS   
+      0 1   
+      .5 0   
+      1 1   
+      .75 1   
+      .5 .5   
+      .25 1   
+      0 1  
+    END 
+  END   
+  SYMBOL  
+    NAME 'star'  
+    TYPE VECTOR 
+    FILLED TRUE 
+    POINTS   
+      0 .375   
+      .35 .375   
+      .5 0   
+      .65 .375   
+      1 .375   
+      .75 .625   
+      .875 1   
+      .5 .75   
+      .125 1   
+      .25 .625  
+     END 
+  END   
+  SYMBOL  
+    NAME 'triangle'  
+    TYPE VECTOR  
+    FILLED TRUE  
+    POINTS   
+      0 1   
+      .5 0   
+      1 1   
+      0 1  
+    END 
+  END
+  SYMBOL  
+    NAME 'square'  
+    TYPE VECTOR  
+    FILLED TRUE  
+    POINTS   
+      0 1   
+      0 0   
+      1 0   
+      1 1   
+      0 1  
+    END 
+  END
+  SYMBOL  
+    NAME 'plus'  
+    TYPE VECTOR  
+    POINTS  
+      .5 0  .5 1  
+      -99 -99  
+      0 .5  
+      1 .5  
+    END 
+  END  
+  SYMBOL  
+    NAME 'cross'  
+    TYPE VECTOR  
+    POINTS   
+      0 0   
+      1 1   
+      -99 -99   
+      0 1   
+      1 0  
+    END 
+  END 
+  SYMBOL  
+    NAME 'circle'  
+    TYPE ELLIPSE  
+    FILLED TRUE  
+    POINTS   
+      1 1  
+    END 
+  END  
+  SYMBOL   
+    NAME 'circle-dashed'   
+    TYPE ELLIPSE   
+    POINTS    
+      1 1   
+    END  
+  END 
+  SYMBOL  
+    NAME 'north'  
+    TYPE VECTOR  
+    FILLED FALSE  
+    POINTS   
+      .4 .8   
+      .4 .425   
+      .6 .8   
+      .6 .425   
+      -99 -99   
+      .375 .8  
+      .425 .8   
+      -99 -99   
+      .575 .425   
+      .625 .425   
+      -99 -99   
+      .5 1   
+      .9 2   
+      .5 1.6   
+      .5 1   
+      -99 -99   
+      .5 1   
+      .1 2   
+      .5 1.6  
+    END 
+  END 
+  SYMBOL  
+    NAME 'north_fill'  
+    TYPE VECTOR  
+    FILLED TRUE  
+    POINTS   
+      .5 1   
+      .9 2   
+      .5 1.6   
+      .5 1  
+    END 
+  END 
+  SYMBOL  
+    NAME 'thick'  
+    TYPE ELLIPSE  
+    POINTS
+      1 1 
+    END  
+    FILLED true
+  END
+  SYMBOL  
+    NAME 'kcross'  
+    TYPE VECTOR  
+    POINTS  
+      .7 0  
+      .7 1  
+      -99 -99  
+      0 .5  
+      1 .5  
+    END
+  END
+  SYMBOL
+    NAME 'hatch'
+    TYPE HATCH
+  END
+  SYMBOL
+    NAME "dashed1"
+    TYPE ellipse
+    POINTS 2 2 END
+    FILLED TRUE
+  END
+  SYMBOL
+    NAME "filledCross"
+    TYPE VECTOR
+    POINTS
+      0 0.4
+      0.4 0.4
+      0.4 0
+      0.6 0
+      0.6 0.4
+      1 0.4
+      1 0.6
+      0.6 0.6
+      0.6 1
+      0.4 1
+      0.4 0.6
+      0 0.6
+      0 0.4
+    END
+    FILLED TRUE
+  END
+END

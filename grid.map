@@ -1,28 +1,28 @@
 #if _display_grid == 1
-LAYER
-  GROUP "default"
-  STATUS ON
-  NAME layername(grid,_layer_suffix)
-  METADATA
-    "DESCRIPTION" "Grid"
-  END
-  TYPE LINE
-  STATUS ON
-  MAXSCALEDENOM _maxscale
-  MINSCALEDENOM _minscale
-  CLASS
-    NAME "Graticule"
-    STYLE
-      COLOR _grid_clr
-      OPACITY 50
+  LAYER
+    GROUP "default"
+    STATUS ON
+    NAME layername(grid,_layer_suffix)
+    METADATA
+      "ows_title" layername(grid,_layer_suffix)
+    END
+    TYPE LINE
+    STATUS OFF
+    MAXSCALEDENOM _maxscale
+    MINSCALEDENOM _minscale
+    CLASS
+      NAME "Graticule"
+      STYLE
+        COLOR _grid_clr
+        OPACITY 50
+      END
+    END
+    PROJECTION
+      "init=epsg:OSM_GRID_SRID"
+    END
+    GRID
+      LABELFORMAT "%.0fkm"
+      MININTERVAL 1000
     END
   END
-  PROJECTION
-        "init=epsg:OSM_GRID_SRID"
-  END
-  GRID
-    LABELFORMAT "%.0fkm"
-    MININTERVAL 1000
-  END
-END
 #endif

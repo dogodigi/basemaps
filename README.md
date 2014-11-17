@@ -16,6 +16,8 @@ you have another version installed.
 * The mapfiles rely on the database schema as created by a recent 
 version of imposm3.
 
+* python yaml is required.
+
 Styles
 ------
 

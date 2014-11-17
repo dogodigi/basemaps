@@ -4,7 +4,7 @@
 
 # If you need to include styles from other styles, enter them in the following variable:
 include_styles: ""
-
+proj_lib: "/usr/share/proj"
 # Grid
 display_grid: 0
 grid_clr: '"#cccccc"'
@@ -13,13 +13,11 @@ grid_clr: '"#cccccc"'
 land_clr: '"#E8E6E1"'
 
 land_data:
-  0: '"data/TM_WORLD_BORDERS-0.3.shp"'
-  3: '"data/shoreline_300"'
-  7: '"data/processed_p"'
+  0: '"data/simplified-land-polygons-complete-3857/simplified_land_polygons.shp"'
+  9: '"data/land-polygons-split-3857/land_polygons.shp"'
 
 land_epsg:
-  0: '"init=epsg:4326"'
-  3: '"init=epsg:3857"'
+  0: '"init=epsg:3857"'
 
 # Water
 waterarea_data:

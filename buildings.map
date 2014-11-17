@@ -1,8 +1,8 @@
 #if _display_buildings == 1
-LAYER
-    STATUS ON
+  LAYER
+    STATUS OFF
     PROJECTION
-        "init=epsg:OSM_SRID"
+      "init=epsg:OSM_SRID"
     END
     GROUP "default"
     NAME layername(buildings,_layer_suffix)
@@ -13,34 +13,38 @@ LAYER
     LABELITEM "name"
     PROCESSING "LABEL_NO_CLIP=ON"
     PROCESSING "CLOSE_CONNECTION=DEFER"
+    METADATA
+      "ows_title" layername(buildings,_layer_suffix)
+      "ows_extent" "OSM_EXTENT"
+    END
     MAXSCALEDENOM _maxscale
     MINSCALEDENOM _minscale
     CLASS
       STYLE
-         COLOR _building_clr
-         OPACITY _building_opacity
+        COLOR _building_clr
+        OPACITY _building_opacity
       END
 #if _display_building_outline
       STYLE
-         OUTLINECOLOR _building_ol_clr
-         WIDTH _building_ol_width
+        OUTLINECOLOR _building_ol_clr
+        WIDTH _building_ol_width
       END
 #endif
 #if _label_buildings == 1
       LABEL
-         TYPE TRUETYPE
-         FONT _building_font
-         PARTIALS FALSE
-         MINFEATURESIZE AUTO
-         SIZE _building_lbl_size
-         COLOR _building_lbl_clr
-         OUTLINECOLOR _building_lbl_ol_clr
-         OUTLINEWIDTH _building_lbl_ol_width
-         WRAP ' '
-         MAXLENGTH 6
-         ALIGN CENTER
+        TYPE TRUETYPE
+        FONT _building_font
+        PARTIALS FALSE
+        MINFEATURESIZE AUTO
+        SIZE _building_lbl_size
+        COLOR _building_lbl_clr
+        OUTLINECOLOR _building_lbl_ol_clr
+        OUTLINEWIDTH _building_lbl_ol_width
+        WRAP ' '
+        MAXLENGTH 6
+        ALIGN CENTER
       END
 #endif
-   END
-END
+    END
+  END
 #endif
